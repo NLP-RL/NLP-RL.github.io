@@ -1,6 +1,6 @@
 function displayMessage(type){
-    var initialMessages = ["Ask me something!", "Hello friend. What would you like to know?", "I am a good bot I swear, please ask me a question."]
-    var responseMessages = ["Hmmm... I don't know the answer to that one.", "I'm not sure how to answer that.", "Can you please just ask me something I know already?"]
+    var initialMessages = ["Hi How are you ?", "Please let me know your sufferings", "Do you have fever"]
+    var responseMessages = ["Hi How are you ?", "Please let me know your sufferings", "Do you have fever"]
     
     var newDiv = document.createElement("div");
     newDiv.className = "chat-bubble";
