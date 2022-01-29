@@ -79,7 +79,7 @@ body, html{
 }
 
 .chat-bubble .image.user{
-    content: url(https://raw.githubusercontent.com/aryasoni98/VDR/master/image/user.png);
+  content: url(/image/user.png);
   float: right;
   margin-right: -30px;
   margin-top: -30px;
@@ -87,7 +87,7 @@ body, html{
 }
 
 .chat-bubble .image.bot{
-  content: url(https://raw.githubusercontent.com/aryasoni98/VDR/master/image/bot.png);
+  content: url(/image/bot.jpg);
   float: left;
   margin-left: -30px;
   margin-top: -30px;

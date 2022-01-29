@@ -60,5 +60,3 @@ function displayMessage(type){
     setTimeout(function(){displayMessage("initial")}, 1500);
     document.getElementById("chat-message-value").addEventListener("input", arrowSubmit);
   }
-  
-  window.addEventListener("load", addHandlers);

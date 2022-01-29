@@ -12,18 +12,19 @@
 
 <header class="text-gray-700 body-font border-b border-gray-200">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/" target="_blank">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
       <span class="ml-3 text-xl">Diagnosis Assistant ChatBot</span>
     </a>
   </div>
 </header>
 
 <div class="content">
-  <div id="chat-contents">
+  <div id="chat-contents"></div>
+  <div class="chat-box"><input type="text" id="chat-message-value" autocomplete="off" placeholder="Type a message">
+    <button id="submit-chat"><svg width="15" height="20" viewBox="0 0 30 21">
+      <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg>
+    </button>
   </div>
-  <div class="chat-box"><input type="text" id="chat-message-value" autocomplete="off" placeholder="Type a message"><button id="submit-chat"><svg width="15" height="20" viewBox="0 0 30 21">
-    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
-  </svg></button></div>
 </div>
 
 <footer class="text-gray-700 body-font">
@@ -35,12 +36,12 @@
   </div>
 </footer>
 
-<a href="#" class="rounded-full w-12 h-12 bg-gray-100 fixed bottom-0 right-0 flex items-center justify-center text-gray-800 mr-8 mb-8 shadow-sm border-gray-300 border" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<a href="https://github.com/NLP-RL/NLP-RL.github.io" class="rounded-full w-12 h-12 bg-gray-100 fixed bottom-0 right-0 flex items-center justify-center text-gray-800 mr-8 mb-8 shadow-sm border-gray-300 border" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
 </a>
 
 <!-- partial -->
-  <script  src="JS/script.js"></script>
+<script  src="JS/script.js"></script>
 
 </body>
 </html>
