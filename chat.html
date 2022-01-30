@@ -5,6 +5,8 @@
   <title>Diagnosis Assistant</title>
   <link rel="stylesheet" href="css/chat.css">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css'>
+  <script src="/js/sweetalert2.js"></script>
+
 
 </head>
 <body>
@@ -15,6 +17,10 @@
     <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
       <span class="ml-3 text-xl">Diagnosis Assistant ChatBot</span>
     </a>
+    <div class="col-lg-12 col-md-12 text-center">
+      <button type="button" class="btn btn-outline-secondary text-uppercase" onclick="signOut()">
+      Sign Out<small></small></button>
+   </div>
   </div>
 </header>
 
@@ -41,7 +47,8 @@
 </a>
 
 <!-- partial -->
-<script  src="JS/script.js"></script>
+<script  src="js/chat.js"></script>
+<script src="/js/login.js"></script>
 
 </body>
 </html>
