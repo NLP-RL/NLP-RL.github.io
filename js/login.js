@@ -52,15 +52,6 @@ function checkUserPassword(){
         document.getElementById("userPasswordError").style.display = "none";
     }
 }
-function checkUserBio(){
-    var userBio = document.getElementById("userBio").value;
-    var flag = false;
-    if(flag){
-        document.getElementById("userBioError").style.display = "block";
-    }else{
-        document.getElementById("userBioError").style.display = "none";
-    }
-}
 function signUp(){
     var userFullName = document.getElementById("userFullName").value;
     var userSurname = document.getElementById("userSurname").value;
@@ -95,10 +86,6 @@ function signUp(){
                 userSurname: userSurname,
                 userEmail: userEmail,
                 userPassword: userPassword,
-                userFb: "https://www.facebook.com/",
-                userTw: "https://twitter.com/",
-                userGp: "https://plus.google.com/",
-                userBio: "User biography",
             }
             firebaseRef.child(uid).set(userData);
             swal('Your Account Created','Your account was created successfully, you can log in now.',
@@ -195,10 +182,6 @@ firebase.auth().onAuthStateChanged((user)=>{
         firebaseRefKey.on('value', (dataSnapShot)=>{
             document.getElementById("userPfFullName").innerHTML = dataSnapShot.val().userFullName;
             document.getElementById("userPfSurname").innerHTML = dataSnapShot.val().userSurname;
-            document.getElementById("userPfFb").setAttribute('href', dataSnapShot.val().userFb);
-            document.getElementById("userPfTw").setAttribute('href', dataSnapShot.val().userTw);
-            document.getElementById("userPfGp").setAttribute('href', dataSnapShot.val().userGp);
-            document.getElementById("userPfBio").innerHTML = dataSnapShot.val().userBio;
         })
     } else {
     }
@@ -208,16 +191,8 @@ function showEditProfileForm(){
     document.getElementById("editProfileForm").style.display = "block"
     var userPfFullName = document.getElementById("userPfFullName").innerHTML;
     var userPfSurname = document.getElementById("userPfSurname").innerHTML;
-    var userPfFb = document.getElementById("userPfFb").getAttribute("href");
-    var userPfTw = document.getElementById("userPfTw").getAttribute("href");
-    var userPfGp = document.getElementById("userPfGp").getAttribute("href");
-    var userPfBio = document.getElementById("userPfBio").innerHTML;
     document.getElementById("userFullName").value = userPfFullName;
     document.getElementById("userSurname").value = userPfSurname;
-    document.getElementById("userFacebook").value = userPfFb;
-    document.getElementById("userTwitter").value = userPfTw;
-    document.getElementById("userGooglePlus").value = userPfGp;
-    document.getElementById("userBio").value = userPfBio;
 }
 // xxxxxxxxxx Hide edit profile form xxxxxxxxxx
 function hideEditProfileForm(){
@@ -227,10 +202,7 @@ function hideEditProfileForm(){
 function saveProfile(){
     let userFullName = document.getElementById("userFullName").value
     let userSurname = document.getElementById("userSurname").value
-    let userFacebook = document.getElementById("userFacebook").value
-    let userTwitter = document.getElementById("userTwitter").value
-    let userGooglePlus = document.getElementById("userGooglePlus").value
-    let userBio = document.getElementById("userBio").value
+
     var userFullNameFormate = /^([A-Za-z.\s_-])/;
     var checkUserFullNameValid = userFullName.match(userFullNameFormate);
     if(checkUserFullNameValid == null){
@@ -247,10 +219,6 @@ function saveProfile(){
         var userData = {
             userFullName: userFullName,
             userSurname: userSurname,
-            userFb: userFacebook,
-            userTw: userTwitter,
-            userGp: userGooglePlus,
-            userBio: userBio,
         }
         firebaseRef.child(uid).set(userData);
         swal({
