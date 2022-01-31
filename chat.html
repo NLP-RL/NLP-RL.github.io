@@ -26,6 +26,11 @@
       <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg>
     </button>
   </div>
+  <div class="file-upload">
+    <label for="upload" class="file-upload__label">Image Upload</label>
+    <progress id="uploader" value="0" max="100">0%</progress>
+    <input id="upload" class="file-upload__input" type="file" name="file-upload">
+  </div> 
 </div>
 
 <footer class="text-gray-700 body-font">
@@ -43,6 +48,41 @@
 
 <script  src="js/chat.js"></script>
 <script src="/js/login.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCInFO3VqYr3CbA2bjVniX2s-gQsjzarTI",
+    authDomain: "nlp-rl-65adb.firebaseapp.com",
+    databaseURL: "https://nlp-rl-65adb.firebaseio.com",
+    projectId: "nlp-rl-65adb",
+    storageBucket: "nlp-rl-65adb.appspot.com",
+    messagingSenderId: "419906818742"
+  };
+  firebase.initializeApp(config);
+  //-------------------------------------
+  
+  var uploader = document.getElementById('uploader');
+  var fileButton =         document.getElementById('upload');
+  fileButton.addEventListener('change', function(e){
+  var file = e.target.files[0];
+  var storageRef = firebase.storage().ref('img/'+file.name);
+  var task = storageRef.put(file);
+  task.on('state_changed', function progress(snapshot) {
+    var percentage = (snapshot.bytesTransferred/snapshot.totalBytes)*100;
+    uploader.value = percentage;
+
+  }, function error(err) {
+
+
+  },function complete() {
+
+  });
+});  
+  
+  
+</script>
 
 </body>
 </html>
