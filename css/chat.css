@@ -16,7 +16,10 @@ body, html{
   flex-direction: column;
 
 }
-
+.log-out{
+  position: absolute;
+  right: 150px;
+}
 .chat-box{
 	margin: 20px;
 }
@@ -115,9 +118,10 @@ body, html{
 /*****************************************
   upload button styles
 ******************************************/
+
 .file-upload {
-  position: relative;
-  display: inline-block;
+  position: absolute;
+  right: 400px;
 }
 
 .file-upload__label {
